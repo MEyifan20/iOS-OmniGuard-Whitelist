@@ -1,115 +1,189 @@
 [Adblock Plus 2.0]
 ! Title: iOS-OmniGuard-Whitelist (Ultimate Unified Edition)
-! Description: 针对 iOS AdGuard Pro 优化的全能白名单。涵盖系统补丁、AI 增强、CF 加固、全球流媒体、国内生活及金融补丁。
-! Version: 2026.02.26.1
+! Description: 针对 iOS 环境深度优化的全能白名单旗舰版。集成系统级核心补丁、AI 生产力加固及全球金融/流媒体规则，通过 $important 标签强制修正激进拦截导致的误杀。
+! Version: 2026.02.26.5
+! Codename: Grandmaster-Ultra
 ! Updated: 2026-02-26
 ! Homepage: https://github.com/MEyifan20/Whitelist
 ! License: https://opensource.org/licenses/mit-license.php
-! -----------------------------------------------------------
+! Changelog: 1. 补全 Apple/Google 底层 API；2. 强化 AI/LLM 域名覆盖；3. 修复内网穿透节点误杀；4. 个人补遗模块底层重构。
+! -------------------------------------------------------------------------------------------------------
 
-! === Priority Fixes (针对激进黑名单的强制覆盖) ===
-! 解决 Google 搜索点击、App 统计、及国内推送误杀
+! === Priority Fixes (核心统计与广告点击) ===
 @@||doubleclick.net^$important
 @@||googleadservices.com^$important
 @@||googletagmanager.com^$important
+@@||googletagservices.com^$important
+@@||adsystem.com^$important
 @@||google-analytics.com^$important
 @@||analytics.google.com^$important
 @@||app-measurement.com^$important
 @@||umeng.com^$important
 @@||umengcloud.com^$important
 
-! === iOS System Services (iOS 系统级核心服务保障) ===
+! === iOS System Services (苹果全系服务) ===
 @@||icloud.com^$important
 @@||icloud-content.com^$important
 @@||apple-cloudkit.com^$important
-@@||fmip.icloud.com^$important
+@@||apple.com^$important
+@@||cdn-apple.com^$important
+@@||mzstatic.com^$important
+@@||s.mzstatic.com^$important
+@@||aaplimg.com^$important
+@@||me.com^$important
 @@||push.apple.com^$important
 @@||mesu.apple.com^$important
 @@||gdmf.apple.com^$important
+@@||gdmf-ados.apple.com^$important
 @@||ocsp.apple.com^$important
+@@||ocsp2.apple.com^$important
 @@||mask-h2.icloud.com^$important
 @@||mask.icloud.com^$important
 @@||time.apple.com^$important
 @@||captive.apple.com^$important
+@@||xp.apple.com^$important
+@@||diagassets.apple.com^$important
+@@||configuration.apple.com^$important
+@@||vpp.itunes.apple.com^$important
 
-! === Cloudflare Ecosystem (CF 全系服务加速) ===
+! === Cloudflare Ecosystem (CF 专项) ===
 @@||cloudflare.com^$important
 @@||cloudflare.net^$important
 @@||cloudflareclient.com^$important
-@@||cloudflarestatic.com^$important
+@@||cloudflare-gateway.com^$important
 @@||cdnjs.cloudflare.com^$important
 @@||cloudflareworkers.com^$important
 @@||workers.dev^$important
+@@||pages.dev^$important
+@@||turnstile.cloudflare.com^$important
 
-! === Apple & Microsoft Ecosystem (双巨头全家桶) ===
-@@||apple.com^$important
-@@||mzstatic.com^$important
-@@||apps.apple.com^$important
-@@||itunes.apple.com^$important
+! === Microsoft & Google Ecosystem (双巨头全家桶) ===
 @@||microsoft.com^$important
 @@||windowsupdate.com^$important
+@@||windows.com^$important
 @@||office.com^$important
+@@||office365.com^$important
 @@||live.com^$important
 @@||bing.com^$important
-
-! === Google Ecosystem (谷歌全家桶) ===
+@@||azure.com^$important
+@@||azure.cn^$important
 @@||google.com^$important
 @@||google.com.hk^$important
+@@||google.cn^$important
 @@||accounts.google.com^$important
 @@||fcm.googleapis.com^$important
 @@||gstatic.com^$important
+@@||gstatic.cn^$important
+@@||googleapis.com^$important
+@@||googleapis.cn^$important
 @@||googleusercontent.com^$important
-@@||google.cn^$important
+@@||1e100.net^$important
 
-! === AI / LLM / Auth (人工智能与身份验证) ===
+! === AI / LLM / Auth (人工智能与验证) ===
 @@||openai.com^$important
 @@||chatgpt.com^$important
 @@||oaistatic.com^$important
+@@||oaiusercontent.com^$important
 @@||auth0.com^$important
 @@||anthropic.com^$important
 @@||claude.ai^$important
 @@||huggingface.co^$important
+@@||hf.co^$important
 @@||gemini.google.com^$important
+@@||hcaptcha.com^$important
+@@||recaptcha.net^$important
 
-! === CN Essentials: Life & Tech (国内电商/大厂/手机厂商) ===
+! === CN Essentials: E-Commerce & Tech (国内大厂) ===
 @@||jd.com^$important
+@@||360buyimg.com^$important
 @@||taobao.com^$important
+@@||tmall.com^$important
 @@||alicdn.com^$important
 @@||alipay.com^$important
+@@||pinduoduo.com^$important
+@@||yangkeduo.com^$important
+@@||meituan.com^$important
+@@||dianping.com^$important
 @@||mi.com^$important
 @@||xiaomi.com^$important
 @@||qq.com^$important
 @@||weixin.qq.com^$important
 @@||baidu.com^$important
 @@||huawei.com^$important
-@@||meituan.com^$important
+@@||hicloud.com^$important
+@@||byteoversea.com^$important
+@@||snssdk.com^$important
+@@||pstatp.com^$important
+@@||hdslb.com^$important
+@@||amap.com^$important
+@@||is.autonavi.com^$important
+@@||oppo.com^$important
+@@||vivo.com.cn^$important
+@@||oneplus.com^$important
+@@||189.cn^$important
+@@||10086.cn^$important
+@@||10010.com^$important
 
-! === Financial & Banking (金融支付与测速) ===
+! === Financial & Banking (金融支付) ===
 @@||paypal.com^$important
 @@||stripe.com^$important
 @@||visa.com^$important
+@@||mastercard.com^$important
 @@||unionpay.com^$important
 @@||95516.com^$important
+@@||icbc.com.cn^$important
 @@||cmbchina.com^$important
 @@||boc.cn^$important
-@@||speedtest.net^$important
-@@||fast.com^$important
+@@||ccb.com^$important
 
-! === Global Streaming & Media (全球流媒体) ===
+! === Global Media & Gaming (流媒体与游戏) ===
 @@||netflix.com^$important
+@@||nflxvideo.net^$important
 @@||spotify.com^$important
+@@||spotifycdn.com^$important
 @@||twitch.tv^$important
 @@||disneyplus.com^$important
 @@||primevideo.com^$important
+@@||steampowered.com^$important
+@@||steamstatic.com^$important
+@@||epicgames.com^$important
+@@||nintendo.com^$important
+@@||playstation.com^$important
 
-! === Dev & Social (开发工具与社交) ===
+! === Common CDN (全球加速) ===
+@@||fastly.net^$important
+@@||akamai.net^$important
+@@||akamaized.net^$important
+@@||cloudfront.net^$important
+@@||identrust.com^$important
+
+! === Network Diagnostics (测速与工具) ===
+@@||speedtest.net^$important
+@@||fast.com^$important
+@@||db-ip.com^$important
+
+! === Dev & Social (开发与社交) ===
 @@||github.com^$important
 @@||githubusercontent.com^$important
 @@||docker.com^$important
+@@||vercel.com^$important
 @@||notion.so^$important
 @@||slack.com^$important
 @@||t.me^$important
 @@||telegram.org^$important
 @@||discord.com^$important
+@@||mapbox.com^$important
 
-
+! === Personal & Special Whitelist (个人补遗与特殊) ===
+@@||frp4.ccszxc.xin^$important
+@@||blueskyxn.com^$important
+@@||000714.xyz^$important
+@@||hanada.info^$important
+@@||moonbbs.com^$important
+@@||weiming.info^$important
+@@||aboluowang.com^$important
+@@||secretchina.com^$important
+@@||c3pool.com^$important
+@@||tagtic.cn^$important
+@@||maccms.com^$important
+@@||widgets.link^$important

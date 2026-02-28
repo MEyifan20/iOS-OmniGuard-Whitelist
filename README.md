@@ -1,77 +1,71 @@
-# 🛡️ iOS-OmniGuard-Whitelist (Guardian-Standard)
+# 🛡️ iOS-OmniGuard-Blacklist（Predator-Standard）
 
-[Adblock Plus 2.0]
-! Title: iOS-OmniGuard-Whitelist (Standard Unified Edition)
-! Description: 针对 iOS 环境深度优化的全能白名单防误杀护盾。精准放行 Apple 核心服务、国内主流支付/社交链路及关键 CDN，与 Blacklist 完美配合，保障系统 100% 稳定运行。
-! Version: 2026.02.28.05
-! Codename: Guardian-Standard
-! Updated: 2026-02-28 05:36
-! -------------------------------------------------------------------------------------------------------
+[广告拦截加 2.0]！
+标题：iOS-OmniGuard-黑名单（标准统一版）！
+描述：针对 iOS 环境深度优化的全能黑名单拦截引擎。整合 217黑带环境前提，融合 BlueSkyXN 双库并加入个人规则丰富，与白名单完美配合。
+版本：2026.03.01.01！
+代号：掠夺者标准！
+更新：2026-03-01 01:01 (GMT+8)！
+! -----------------------------------------------------------------------------------------------------------
 
 ## 📖 项目简介
-**iOS-OmniGuard-Whitelist** 是专为 iOS 高级用户打造的“系统级保活”白名单方案。当你在使用高强度的 DNS 黑名单或代理工具去广告时，往往会遭遇 App 无法登录、图片加载失败或系统推送延迟等“误杀”问题。
+iOS-OmniGuard-Blacklist 是专为 iOS 高级用户打造的“系统级净网”拦截方案。当你在浏览网页或使用 App 时，往往会遇到各种开屏广告、追踪器以及隐私泄露风险。
 
-本项目提取了高频误杀节点，通过高优先级的 `@@` 放行规则，为你张开一张隐形护盾。建议将其与 **iOS-OmniGuard-Blacklist** 组合使用，构建完美的攻防闭环。
+**💡 作者强烈建议：** 请务必将本项目与本作者的兄弟项目 **[iOS-OmniGuard-Whitelist](https://github.com/MEyifan20/iOS-OmniGuard-Whitelist)** 组合使用。
+
+黑名单负责全域深度拦截，而白名单负责精准放行苹果服务、国内主流支付/社交渠道及关键 CDN 节点。这种“攻防对冲”的闭环逻辑能有效防止因暴力拦截导致的 App 无法登录、图片加载失败或系统自动更新延迟等误杀与系统错误。
 
 ---
 
 ## 🚀 订阅地址
-
-### 1️⃣ DNS 过滤器 (标准白名单)
-* **jsDelivr CDN (推荐国内直连)**
-https://cdn.jsdelivr.net/gh/MEyifan20/Whitelist@main/iOS-OmniGuard-Whitelist.txt
-
-* **GitHub 原生地址**
-https://raw.githubusercontent.com/MEyifan20/Whitelist/main/iOS-OmniGuard-Whitelist.txt
+1️⃣ **DNS 过滤器 (全量聚合黑名单)**
+- **jsDelivr CDN (推荐国内直连)**: `https://cdn.jsdelivr.net/gh/MEyifan20/iOS-OmniGuard-Blacklist@main/iOS-OmniGuard-Blacklist.txt`
+- **GitHub 原始地址**: `https://raw.githubusercontent.com/MEyifan20/iOS-OmniGuard-Blacklist/main/iOS-OmniGuard-Blacklist.txt`
 
 ---
 
 ## 💎 核心优势
-* 🍎 **苹果生态保活**: 强制放行 iCloud 极速同步、App Store 下载、iMessage 及推送服务。
-* 💳 **支付链路绿灯**: 确保微信支付、支付宝、银联等金融级 API 节点绝对畅通。
-* 🔗 **关键 CDN 修复**: 修复因误杀导致的淘宝/京东图片不显示、B站弹幕断流等次生灾害。
-* ⚖️ **底层逻辑闭环**: 采用白名单最高优先级逻辑，免疫一切第三方黑名单库的暴力误杀。
+- 🚫 **全域广告截断**: 强制拦截主流 App 开屏广告、内置横幅及信息流推广。
+- 🕵️ **隐私追踪防护**: 封杀移动端常见的分析插件、采集日志器及用户画像监测点。
+- 📊 **多源动态融合**: 自动同步三大上游仓库，保证规则的时效性、广度与深度。
+- ⚖️ **底层逻辑闭环**: 遵循 AdGuard 官方语法规范，自动执行物理去重。
 
 ---
 
 ## 🛠️ 技术指标 (Technical Metrics)
-为了实现极致的系统稳定性，本项目遵循以下放行逻辑：
-$$Allow \cap \{Apple\_Core, Finance, Essential\_CDN\} \setminus \{Ad\_Tracker\} = 100\%$$
+为了实现最大的拦截效率，本项目遵循以下过滤逻辑：
+$$Block \cap \{AD\_Server, Tracker, Analytics\} \setminus \{Whitelist\_Allow\} = 0\%$$
 
 | 模块名称 | 保护目标 | 策略强度 |
 | :--- | :--- | :--- |
-| **Apple Core** | iCloud, App Store, 系统的推送与时间同步 | 绝对放行 (Allow) |
-| **Finance Shield** | 微信支付、支付宝、银行 App 核心网关 | 绝对放行 (Allow) |
-| **CN Essential** | 腾讯/阿里/字节跳动的基础云服务及登录组件 | 修复 (Repair) |
-| **Global CDN** | Akamai, Cloudflare 等容易被误杀的云节点 | 保障 (Secure) |
-
----
-
-## ⚙️ 配置建议
-1. **DNS 规则安装**：进入应用 -> DNS 防护 -> DNS 过滤器 -> 添加过滤器 -> 粘贴上述 TXT 链接（AdGuard 原生支持识别 `@@` 白名单语法）。
-2. **优先级设置**：请务必确保该白名单的排序和优先级**高于**所有黑名单，让防护盾在第一层生效。
-3. **配合使用**: 强烈建议与本项目的兄弟版本 `iOS-OmniGuard-Blacklist` 组合使用。
+| **广告服务器** | 开屏广告、弹窗广告 | 拦截 (Block) |
+| **追踪器** | 追踪器、数据采集器 | 全面封杀 (Reject) |
+| **分析** | App 内部行为日志上传 | 行为抑制 (Mute) |
+| **安全** | 恶意软件、钓鱼链接 | 安全防护 (Secure) |
 
 ---
 
 ## 🤖 自动化维护 (Auto-Update)
-本项目支持通过 GitHub Actions 实现自动化维护，每日自动更新版本号与时间戳，确保你的规则永远处于激活状态。
+本项目支持通过 GitHub Actions 实现自动化维护。
+- **规则总数**：1,012,211条 (自动去重后)
+- **最后同步**：2026-03-01 01:01(北京时间 UTC+8)
+- **核心来源**：217heidai + BlueSkyXN (All + Sky)
+- **个人来源**：my-rules.txt (个性化丰富包)
 
 ---
 
-## 🤝 致谢与声明
-* **致谢**: 感谢各大开源去广告社区提供的排错反馈。
-* **声明**: 本项目仅供技术研究与交流使用，禁止用于任何非法用途。
+## 📝 变更日志 | Changelog
+详细的版本演进记录、新增/移除规则统计以及自动化去重报告，请参阅：
+👉 **[查看完整更新日志](./changelog.md)**
 
 ---
 
 ## ❤️ 助力项目
-- **点亮 Star**：点击右上角 ⭐ Star，这是对我持续维护最大的动力。
-- **反馈问题**：请提交 [Issues](https://github.com/MEyifan20/Whitelist/issues)。
+- **点亮星星**：点击右上角 ⭐ 星星，这是对我持续维护最大的动力。
+- **反馈问题**：请提交 [Issues](https://github.com/MEyifan20/iOS-OmniGuard-Blacklist/issues)。
 
 ---
-**iOS-OmniGuard-Whitelist** · 愿你的网络环境干净且自由。
+**iOS-OmniGuard-Blacklist** · 愿您的网络环境干净且自由。
 
-**最后修改时间**：2026-02-28 05:36 (GMT+8)
-**Maintained by**: [MEyifan20](https://github.com/MEyifan20)  
-**License**: [MIT](https://opensource.org/licenses/mit-license.php)
+**最后修改时间**：2026-03-01 01:01 (GMT+8)**维护者**：[MEyifan20](https://github.com/MEyifan20)  
+**许可证**：MIT
